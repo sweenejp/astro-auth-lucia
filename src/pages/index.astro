@@ -1,4 +1,6 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
 const user = Astro.locals.user;
 
 if (!user) {
@@ -6,21 +8,13 @@ if (!user) {
 }
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Lucia example</title>
-  </head>
-  <body>
-    <h1>Hi, {user.username}!</h1>
-    <p>Your user ID is {user.id}.</p>
-    <form method="post" action="/api/logout">
-      <button>Sign out</button>
-    </form>
-  </body>
-</html>
+<Layout title="Home">
+  <h1>Hi, {user.username}!</h1>
+  <p>Your user ID is {user.id}.</p>
+  <form method="post" action="/api/logout">
+    <button>Sign out</button>
+  </form>
+</Layout>
 
 <script>
   document.forms[0].addEventListener('submit', async e => {
