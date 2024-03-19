@@ -37,5 +37,5 @@ export const auth0 = new Auth0(
   import.meta.env.AUTH0_DOMAIN,
   import.meta.env.AUTH0_CLIENT_ID,
   import.meta.env.AUTH0_CLIENT_SECRET,
-  `${appUrl}/login/auth0/callback`
+  `${appUrl}/api/login/auth0/callback`
 );

@@ -1,10 +1,10 @@
-import { auth0, lucia } from '../../../lib/auth';
+import { auth0, lucia } from '../../../../lib/auth';
 import { OAuth2RequestError } from 'arctic';
-import { db } from '../../../lib/db';
+import { db } from '../../../../lib/db';
 import { generateId } from 'lucia';
 
 import type { APIContext } from 'astro';
-import type { DatabaseUser } from '../../../lib/db';
+import type { DatabaseUser } from '../../../../lib/db';
 
 export async function GET(context: APIContext): Promise<Response> {
   const code = context.url.searchParams.get('code');
